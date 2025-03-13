@@ -1,0 +1,60 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_ideology_dainippon_communism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/dainippon_communism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_kozahacom_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kozaha.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_rounoucom_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/rounouha.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_kita_ikki_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/kita_ikki.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_okawa_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/okawa.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_japanese_militarism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/japanese_militarism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_nichirenism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/nichirenism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_showa_anarchism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/showa_anarchism.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_ideology_showa_statism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/showa_statism.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_ideology_social_nichirenism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/social_nichirenism.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_ideology_state_shintoism_bar"
+		textureFile = "gfx/interface/ideologies/ideology_bars/state_shintoism.png"
+		legacy_lazy_load = no
+	}
+
+}

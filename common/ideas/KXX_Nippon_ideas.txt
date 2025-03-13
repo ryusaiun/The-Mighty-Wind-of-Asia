@@ -1,0 +1,16 @@
+ideas = {
+
+	country = {
+		#旭日寒骨-日本
+		JAP_Chrysanthemum_Throne_Hirohito = {#裕仁（开局）
+			on_add = {log = "[GetDateText]: [Root.GetName]: JAP_Chrysanthemum_Throne_Hirohito"}
+			allowed = { always = yes }
+			picture = JAP_Chrysanthemum_Throne_Hirohito
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+	}
+}

@@ -1,0 +1,117 @@
+spriteTypes = {
+	##旭日寒骨
+	spriteType = {
+		name = "GFX_Imperial_Seal_of_Japan"
+		texturefile = "gfx/interface/decisions/Imperial_Seal_of_Japan.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_Emblem_of_the_Prime_Minister_of_Japan"
+		texturefile = "gfx/interface/decisions/Emblem_of_the_Prime_Minister_of_Japan.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_idea_JAP_Chrysanthemum_Throne_Hirohito"
+		texturefile = "gfx/interface/ideas/KXX_JAP/JAP_Chrysanthemum_Throne_Hirohito.png"
+	}
+	spriteType = {
+		name = "GFX_ideology_tot_rounoucom_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/tot_rounoucom_group.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_syn_rounoucom_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/rounoucom_group.png"
+	}
+		
+	spriteType = {
+		name = "GFX_ideology_radsoc_rounoucom_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/rounoucom_group.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_kozahacom_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/kozahacom_group.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_radsoc_kozahacom_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/radsoc_kozahacom_group.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_dainippon_communism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/dainippon_communism_group.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_natpop_showa_statism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/npo_showa_statism.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_pataut_showa_statism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/patuat_showa_statism.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_authdem_showa_statism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/authdem_showa_statism.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_authdem_japanese_militarism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/npo_japanese_militarism.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_natpop_japanese_militarism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/npo_japanese_militarism.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_pataut_japanese_militarism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/pataut_japanese_militarism.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_okawa_shumei_thought_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/Shumeism.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_ikki_kita_thought_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/ikki_kita_thought.png"
+	}
+
+	spriteType = {
+		name = "GFX_ideology_natpop_state_shintoism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/natpop_state_shintoism.png"
+	}
+
+	SpriteType = {
+		name = "GFX_ideology_tot_nichiren_buddhism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/tot_nichirenism.png"
+	}
+	
+	SpriteType = {
+		name = "GFX_ideology_radsoc_nichiren_buddhism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/radsoc_nichirenism.png"
+	}
+
+	SpriteType = {
+		name = "GFX_ideology_socdem_nichiren_buddhism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/socdem_nichirenism.png"
+	}
+
+	SpriteType = {
+		name = "GFX_ideology_natpop_nichiren_buddhism_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/natpop_nichirenism.png"
+	}
+
+	SpriteType = {
+		name = "GFX_ideology_radsoc_sanshiro_thought_subtype"
+		texturefile = "gfx/interface/ideologies/subideologies/radsoc_showa_ananarchism.png"
+	}
+
+}

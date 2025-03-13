@@ -1,0 +1,660 @@
+focus_tree = {
+	id = Manchuria
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MAN
+		}
+	}
+	default = no
+	focus = {
+		id = MAN_Manchurian_Incident
+		icon = GFX_goal_MAN_Manchurian_Incident
+		cost = 0.00
+		x = 16
+		y = 1
+
+	}
+	focus = {
+		id = MAN_Bu_un_cho_kyu
+		icon = GFX_goal_MAN_Bu_un_cho_kyu
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Manchurian_Incident
+		}
+		x = 9
+		y = 2
+
+	}
+	focus = {
+		id = MAN_Reorganize_Mantetsu
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Bu_un_cho_kyu
+		}
+		x = 4
+		y = 3
+
+	}
+	focus = {
+		id = MAN_Establish_Kan_to_ukyoku
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Reorganize_Mantetsu
+		}
+		x = 3
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Economic_Staff
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Establish_Kan_to_ukyoku
+		}
+		x = 3
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Oversee_Kokutetsu
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Reorganize_Mantetsu
+		}
+		x = 5
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Japanese_Manchuria_Economy
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Oversee_Kokutetsu
+		}
+		x = 5
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Manshu_takushoku
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Economic_Staff
+		}
+		prerequisite = {
+			focus = MAN_Japanese_Manchuria_Economy
+		}
+		x = 4
+		y = 6
+
+	}
+	focus = {
+		id = MAN_Offensive_against_Chugoku
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Bu_un_cho_kyu
+		}
+		x = 9
+		y = 3
+
+	}
+	focus = {
+		id = MAN_Unit_731
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Offensive_against_Chugoku
+		}
+		x = 7
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Doihara_Agency
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Unit_731
+		}
+		x = 7
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Cavalry_Regiment
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Offensive_against_Chugoku
+		}
+		x = 9
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Mixed_Armored_Forces
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Cavalry_Regiment
+		}
+		x = 9
+		y = 5
+
+	}
+	focus = {
+		id = MAN_So_muchou
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Bu_un_cho_kyu
+		}
+		x = 13
+		y = 3
+
+	}
+	focus = {
+		id = MAN_Public_Security_Management
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Offensive_against_Chugoku
+		}
+		prerequisite = {
+			focus = MAN_So_muchou
+		}
+		x = 11
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Reorganize_Recruit
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Public_Security_Management
+		}
+		x = 11
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Towards_Wartime_System
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Doihara_Agency
+		}
+		prerequisite = {
+			focus = MAN_Mixed_Armored_Forces
+		}
+		prerequisite = {
+			focus = MAN_Reorganize_Recruit
+		}
+		x = 9
+		y = 6
+
+	}
+	focus = {
+		id = MAN_Confirm_guidelines
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_So_muchou
+		}
+		x = 13
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Mainland_Policy
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Confirm_guidelines
+		}
+		x = 13
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Control_Concordia_Association
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_So_muchou
+		}
+		x = 15
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Official_Appointments
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Control_Concordia_Association
+		}
+		x = 15
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Boshi_yocho
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Mainland_Policy
+		}
+		prerequisite = {
+			focus = MAN_Official_Appointments
+		}
+		prerequisite = {
+			focus = MAN_Reorganize_Recruit
+		}
+		x = 13
+		y = 6
+
+	}
+	focus = {
+		id = MAN_Cannibalize
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Manshu_takushoku
+		}
+		prerequisite = {
+			focus = MAN_Towards_Wartime_System
+		}
+		prerequisite = {
+			focus = MAN_Boshi_yocho
+		}
+		mutually_exclusive = {
+			focus = MAN_Quickly_Destroy
+		}
+		x = 6
+		y = 7
+
+	}
+	focus = {
+		id = MAN_Quickly_Destroy
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Boshi_yocho
+		}
+		prerequisite = {
+			focus = MAN_Towards_Wartime_System
+		}
+		prerequisite = {
+			focus = MAN_Manshu_takushoku
+		}
+		mutually_exclusive = {
+			focus = MAN_Cannibalize
+		}
+		x = 12
+		y = 7
+
+	}
+	focus = {
+		id = MAN_Fushigi
+		icon = GFX_goal_MAN_Fushigi
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Manchurian_Incident
+		}
+		x = 23
+		y = 2
+
+	}
+	focus = {
+		id = MAN_Preparing_for_reorganization
+		icon = GFX_goal_MAN_Preparing_for_reorganization
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Fushigi
+		}
+		x = 23
+		y = 3
+
+	}
+	focus = {
+		id = MAN_Contain_Kwantung_Army
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Preparing_for_reorganization
+		}
+		x = 20
+		y = 4
+
+	}
+	focus = {
+		id = MAN_State_Within_a_State
+		icon = GFX_goal_MAN_State_Within_a_State
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Contain_Kwantung_Army
+		}
+		x = 19
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Manchukuo_Army
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Contain_Kwantung_Army
+		}
+		x = 21
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Winning_over_Shikankei
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Manchukuo_Army
+		}
+		prerequisite = {
+			focus = MAN_State_Within_a_State
+		}
+		x = 18
+		y = 6
+
+	}
+	focus = {
+		id = MAN_Bribing_officials
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_State_Within_a_State
+		}
+		prerequisite = {
+			focus = MAN_Manchukuo_Army
+		}
+		x = 22
+		y = 6
+
+	}
+	focus = {
+		id = MAN_Corporate_Adjustment
+		icon = GFX_goal_MAN_Corporate_Adjustment
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Preparing_for_reorganization
+		}
+		x = 25
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Shain_kai
+		icon = GFX_goal_MAN_Shain_kai
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Corporate_Adjustment
+		}
+		x = 25
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Add_office
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Shain_kai
+		}
+		x = 25
+		y = 6
+
+	}
+	focus = {
+		id = MAN_Industrial_promotion
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Add_office
+		}
+		x = 25
+		y = 7
+
+	}
+	focus = {
+		id = MAN_Economic_Control
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Preparing_for_reorganization
+		}
+		x = 27
+		y = 4
+
+	}
+	focus = {
+		id = MAN_Soliciting_investment
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Economic_Control
+		}
+		x = 27
+		y = 5
+
+	}
+	focus = {
+		id = MAN_Subsidiary_expansion
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Soliciting_investment
+		}
+		x = 27
+		y = 6
+
+	}
+	focus = {
+		id = MAN_Mantetsu_Bonds
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Subsidiary_expansion
+		}
+		x = 27
+		y = 7
+
+	}
+	focus = {
+		id = MAN_Invest_in_Hokuman
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Mantetsu_Bonds
+		}
+		prerequisite = {
+			focus = MAN_Industrial_promotion
+		}
+		x = 24
+		y = 8
+
+	}
+	focus = {
+		id = MAN_Chosen_Economy
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Mantetsu_Bonds
+		}
+		prerequisite = {
+			focus = MAN_Industrial_promotion
+		}
+		x = 26
+		y = 8
+
+	}
+	focus = {
+		id = MAN_Go_on_to_hoko
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Cannibalize
+			focus = MAN_Quickly_Destroy
+		}
+		x = 9
+		y = 8
+
+	}
+	focus = {
+		id = MAN_Jimu_shokutaku
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Manchukuo_Army
+		}
+		prerequisite = {
+			focus = MAN_State_Within_a_State
+		}
+		x = 20
+		y = 6
+
+	}
+	focus = {
+		id = MAN_Economic_Research_Council
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Jimu_shokutaku
+		}
+		x = 20
+		y = 7
+
+	}
+	focus = {
+		id = MAN_Expanding_spy_operations
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Bribing_officials
+		}
+		prerequisite = {
+			focus = MAN_Jimu_shokutaku
+		}
+		x = 22
+		y = 7
+
+	}
+	focus = {
+		id = MAN_Grand_Investigation_Department
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Economic_Research_Council
+		}
+		x = 20
+		y = 8
+
+	}
+	focus = {
+		id = MAN_Infiltrating_Shanhaiguan
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Expanding_spy_operations
+		}
+		x = 22
+		y = 8
+
+	}
+	focus = {
+		id = MAN_Urajiosutoku_shokai
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Mantetsu_Bonds
+		}
+		prerequisite = {
+			focus = MAN_Industrial_promotion
+		}
+		x = 28
+		y = 8
+
+	}
+	focus = {
+		id = MAN_Manchuria_Konzern
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Invest_in_Hokuman
+			focus = MAN_Chosen_Economy
+			focus = MAN_Urajiosutoku_shokai
+		}
+		x = 26
+		y = 9
+
+	}
+	focus = {
+		id = MAN_Cornucopia_of_Asia
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Manchuria_Konzern
+		}
+		prerequisite = {
+			focus = MAN_Establishing_EastAsian_traffic_rights
+		}
+		x = 23
+		y = 10
+
+	}
+	focus = {
+		id = MAN_Trade_with_Communications
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Winning_over_Shikankei
+		}
+		x = 18
+		y = 7
+
+	}
+	focus = {
+		id = MAN_Kyowato
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Trade_with_Communications
+		}
+		x = 18
+		y = 8
+
+	}
+	focus = {
+		id = MAN_Establishing_EastAsian_traffic_rights
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = MAN_Kyowato
+		}
+		prerequisite = {
+			focus = MAN_Grand_Investigation_Department
+		}
+		prerequisite = {
+			focus = MAN_Infiltrating_Shanhaiguan
+		}
+		x = 20
+		y = 9
+
+	}
+}

@@ -1,0 +1,31 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_goal_MAN_Manchurian_Incident"
+		texturefile = "gfx/interface/goals/MAN_Manchurian_Incident.png"
+	}
+	spriteType = {
+		name = "GFX_goal_MAN_Fushigi"
+		texturefile = "gfx/interface/goals/MAN_Fushigi.png"
+	}		
+	spriteType = {
+		name = "GFX_goal_MAN_Bu_un_cho_kyu"
+		texturefile = "gfx/interface/goals/MAN_Bu_un_cho_kyu.png"
+	}	
+	spriteType = {
+		name = "GFX_goal_MAN_Shain_kai"
+		texturefile = "gfx/interface/goals/MAN_Shain_kai.png"
+	}	
+	spriteType = {
+		name = "GFX_goal_MAN_Preparing_for_reorganization"
+		texturefile = "gfx/interface/goals/MAN_Preparing_for_reorganization.png"
+	}	
+	spriteType = {
+		name = "GFX_goal_MAN_State_Within_a_State"
+		texturefile = "gfx/interface/goals/MAN_State_Within_a_State.png"
+	}	
+	spriteType = {
+		name = "GFX_goal_MAN_Corporate_Adjustment"
+		texturefile = "gfx/interface/goals/MAN_Corporate_Adjustment.png"
+	}																								
+}

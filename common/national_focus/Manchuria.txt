@@ -8,6 +8,10 @@ focus_tree = {
 		}
 	}
 	default = no
+	continuous_focus_position = {
+		x = 0
+		y = 0
+	}
 	focus = {
 		id = MAN_Manchurian_Incident
 		icon = GFX_goal_MAN_Manchurian_Incident
@@ -657,4 +661,1679 @@ focus_tree = {
 		y = 9
 
 	}
+
+##############################
+######- Economic Tree -#######
+##############################
+	focus = {
+		id = MAN_The_Manchuria_Project
+		icon = GFX_focus_jap_manchurian_project
+		cost = 8
+
+		x = 11
+		y = 10
+
+		ai_will_do = { factor = 500 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_The_Manchuria_Project"
+			add_war_support = 0.1
+			remove_ideas = FNG_Backward_Industry
+		}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+	focus = {
+		id = MAN_Industrial_Development_Commission
+		icon = GFX_UKR_indicative_planning
+		cost = 7
+
+		relative_position_id = MAN_The_Manchuria_Project
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = MAN_The_Manchuria_Project
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Industrial_Development_Commission"
+			add_stability = 0.05
+			add_tech_bonus = {
+				name = FNG_Found_the_Northeast_IDC
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
+		id = MAN_Anshan_Mines
+		icon = GFX_goal_FIU_austrian_steel
+		cost = 7
+
+		relative_position_id = MAN_Industrial_Development_Commission
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Industrial_Development_Commission
+		}
+		available = {
+			716 = { is_owned_and_controlled_by = ROOT }
+		}
+		bypass = {
+			hidden_trigger = {
+				716 = { has_state_flag = FNG_steel_mines_developed }
+			}
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Anshan_Mines"
+			activate_targeted_decision = { target = 716 decision = FNG_Expand_the_Anshan_Mines }
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = anshan_iron_and_steel
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_Aluminium_Extraction
+		icon = GFX_goal_UMN_secure_mines
+		cost = 7
+
+		relative_position_id = MAN_Industrial_Development_Commission
+		x = -3
+		y = 2
+
+		prerequisite = {
+			focus = MAN_Anshan_Mines
+		}
+		available = {
+			716 = { is_owned_and_controlled_by = ROOT }
+		}
+		bypass = {
+			hidden_trigger = {
+				716 = { has_state_flag = FNG_aluminium_mines_developed }
+			}
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Aluminium_Extraction"
+			activate_targeted_decision = { target = 716 decision = MAN_Aluminium_Extraction }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_Fushun_Mines
+		icon = GFX_goal_UMN_cobalt_mines
+		cost = 9
+
+		relative_position_id = MAN_Industrial_Development_Commission
+		x = -2
+		y = 3
+
+		prerequisite = {
+			focus = MAN_Anshan_Mines
+		}
+		available = {
+			716 = { is_owned_and_controlled_by = ROOT }
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Fushun_Mines"
+			716 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_National_Transportation_Commission
+		icon = GFX_goal_NIC_Pacific_Rail_Expansion
+		cost = 15
+
+		relative_position_id = MAN_Industrial_Development_Commission
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Industrial_Development_Commission
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_National_Transportation_Commission"
+			random_owned_controlled_state = {
+				prioritize = { 886 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 714 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 715 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_Yalu_And_Songhua_Hydroelectricity
+		icon = GFX_goal_AUS_tauernkraftwerk_hydro_power
+		cost = 10
+
+		relative_position_id = MAN_National_Transportation_Commission
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_National_Transportation_Commission
+		}
+		available = {
+			328 = { is_owned_and_controlled_by = ROOT }
+			886 = { is_owned_and_controlled_by = ROOT }
+			885 = { is_owned_and_controlled_by = ROOT }
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Yalu_And_Songhua_Hydroelectricity"
+			328 = {
+				add_building_construction = { #Andong
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			886 = {
+				add_building_construction = { #Jilin
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			885 = {
+				add_building_construction = { #Songjiang
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_Jinzhou_Industrial_Zone
+		icon = GFX_RUS_Begin_Industrialization
+		cost = 10
+
+		relative_position_id = MAN_National_Transportation_Commission
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_National_Transportation_Commission
+		}
+		available = {
+			716 = { is_owned_and_controlled_by = ROOT }
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Jinzhou_Industrial_Zone"
+			716 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_Develop_Heilongjiang
+		icon = GFX_goal_generic_industrial_planning
+		cost = 8
+
+		relative_position_id = MAN_Industrial_Development_Commission
+		x = 1
+		y = 3
+
+		prerequisite = {
+			focus = MAN_Yalu_And_Songhua_Hydroelectricity
+			focus = MAN_Jinzhou_Industrial_Zone
+		}
+		#Swapped positions with Jinzhou because now Japan can annex the Manchurian coast
+		available = {
+			714 = { is_owned_and_controlled_by = ROOT }
+			883 = { is_owned_and_controlled_by = ROOT }
+			884 = { is_owned_and_controlled_by = ROOT }
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Develop_Heilongjiang"
+			build_railway = {
+				start_province = 7526
+				target_province = 7897
+				level = 1
+			}
+			883 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			build_railway = {
+				start_province = 1588
+				target_province = 1847
+				level = 1
+			}
+			884 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_The_Northeast_Breadbasket
+		icon = GFX_goal_AUS_recovery_food
+		cost = 7
+
+		relative_position_id = MAN_Industrial_Development_Commission
+		x = -6
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Industrial_Development_Commission
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_The_Northeast_Breadbasket"
+			add_tech_bonus = {
+				name = MAN_The_Northeast_Breadbasket
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = MAN_Soy_Agricultural_Initiative
+		icon = GFX_goal_TEX_Power_to_Farmers
+		cost = 7
+
+		relative_position_id = MAN_The_Northeast_Breadbasket
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_The_Northeast_Breadbasket
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Soy_Agricultural_Initiative"
+			random_owned_controlled_state = {
+				prioritize = { 328 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_Fuelling_Mechanization
+		icon = GFX_goal_AUS_galicia_oil
+		cost = 10
+
+		relative_position_id = MAN_Soy_Agricultural_Initiative
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Soy_Agricultural_Initiative
+		}
+		prerequisite = {
+			focus = MAN_Dyes_And_Textiles
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Fuelling_Mechanization"
+			set_technology = { synth_oil_experiments = 1 }
+			716 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = fuel_silo
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_Dyes_And_Textiles
+		icon = GFX_goal_SZC_textiles
+		cost = 7
+
+		relative_position_id = MAN_The_Northeast_Breadbasket
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_The_Northeast_Breadbasket
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Dyes_And_Textiles"
+			random_owned_controlled_state = {
+				prioritize = { 715 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_new_capital_new_nation
+		icon = GFX_cityonahill
+		cost = 7
+
+		relative_position_id = MAN_The_Manchuria_Project
+		x = 3
+		y = 1
+
+		prerequisite = {
+			focus = MAN_The_Manchuria_Project
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_new_capital_new_nation"
+			capital_scope = {
+				add_extra_state_shared_building_slots = 2
+				if = {
+					limit = { free_building_slots = { building = infrastructure size > 0  } }
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_war_support = 0.10
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_buttress_central_bank
+		icon = GFX_goal_generic_banking_legislation
+		cost = 7
+
+		relative_position_id = MAN_new_capital_new_nation
+		x = 3
+		y = 1
+
+		prerequisite = {
+			focus = MAN_new_capital_new_nation
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_buttress_central_bank"
+			add_tech_bonus = {
+				name = MAN_buttress_central_bank
+				bonus = 0.5
+				uses = 2
+				category = construction_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_new_currency
+		icon = GFX_goal_FNG_Ban_Liang
+		cost = 7
+
+		relative_position_id = MAN_buttress_central_bank
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_buttress_central_bank
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_new_currency"
+			add_tech_bonus = {
+				name = MAN_new_currency
+				bonus = 0.25
+				uses = 4
+				category = industry
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_mobilise_manchurian_industrial_might
+		icon = GFX_goal_NIC_Military_Industry
+		cost = 7
+
+		relative_position_id = MAN_new_currency
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = MAN_buttress_central_bank
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_mobilise_manchurian_industrial_might"
+
+			increase_mobilisation = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_streamline_salt_gabelle
+		icon = GFX_goal_SZC_salt
+		cost = 7
+
+		relative_position_id = MAN_buttress_central_bank
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_buttress_central_bank
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_streamline_salt_gabelle"
+			add_political_power = 50
+			add_ideas = FNG_Centralized_Provincial_Revenues
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_fund_national_foundation_university
+		icon = GFX_goal_ENG_Highland_Research_Towns
+		cost = 7
+
+		relative_position_id = MAN_new_capital_new_nation
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = MAN_new_capital_new_nation
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_fund_national_foundation_university"
+			add_research_slot_until_five = yes
+			set_temp_variable = { ideology_change_var = 0.05 }
+			change_ruling_party_popularity = yes
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_secure_international_legitimacy
+		icon = GFX_goal_generic_world_diplomacy
+		cost = 7
+
+		relative_position_id = MAN_fund_national_foundation_university
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = MAN_fund_national_foundation_university
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_secure_international_legitimacy"
+			add_stability = 0.10
+			remove_ideas = FNG_Investment_Dearth
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_nationalise_japanese_assets
+		icon = GFX_goal_FNG_Mantetsu_Corpse
+		cost = 8
+
+		relative_position_id = MAN_secure_international_legitimacy
+		x = -1
+		y = 1
+
+		mutually_exclusive = { focus = MAN_work_with_concordia }
+		available = { NOT = { is_subject_of = JAP } }
+		prerequisite = {
+			focus = MAN_secure_international_legitimacy
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_nationalise_japanese_assets"
+			set_temp_variable = { ideology_change_var = 0.05 }
+			change_ruling_party_popularity = yes
+			add_one_random_civilian_factory = yes
+			add_tech_bonus = {
+				name = MAN_nationalise_japanese_assets
+				bonus = 0.25
+				uses = 1
+				category = electronics
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_work_with_concordia
+		icon = GFX_goal_FNG_Mantetsu_Coop
+		cost = 8
+
+		relative_position_id = MAN_secure_international_legitimacy
+		x = 1
+		y = 1
+
+		mutually_exclusive = { focus = MAN_nationalise_japanese_assets }
+		available = { is_subject_of = JAP }
+		prerequisite = {
+			focus = MAN_secure_international_legitimacy
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_work_with_concordia"
+			add_popularity = { ideology = market_liberal popularity = 0.10 }
+			add_one_random_civilian_factory = yes
+			add_one_random_civilian_factory = yes
+			add_tech_bonus = {
+				name = MAN_work_with_concordia
+				bonus = 0.25
+				uses = 2
+				category = electronics
+			}
+			JAP = {
+				if = {
+					limit = { has_idea = JAP_MANTETSU_COLLAPSE }
+					remove_ideas = JAP_MANTETSU_COLLAPSE
+				}
+				if = {
+					limit = { NOT = { has_idea = MAN_mantetsu_profits } }
+					add_ideas = MAN_mantetsu_profits
+				}
+			}
+			if = {
+				limit = { NOT = { has_idea = MAN_mantetsu_influence_idea } }
+				add_ideas = MAN_mantetsu_influence_idea
+			}
+			custom_effect_tooltip = tooltip_white_line
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = mantetsu_industrial_subsidiaries
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_jewel_of_the_northeast
+		icon = GFX_goal_UMN_diamonds
+		cost = 10
+
+		relative_position_id = MAN_The_Manchuria_Project
+		x = 0
+		y = 5
+
+		prerequisite = {
+			focus = MAN_Fuelling_Mechanization
+		}
+		prerequisite = {
+			focus = MAN_Fushun_Mines
+		}
+		prerequisite = {
+			focus = MAN_Develop_Heilongjiang
+		}
+		prerequisite = {
+			focus = MAN_mobilise_manchurian_industrial_might
+		}
+		prerequisite = {
+			focus = MAN_work_with_concordia
+			focus = MAN_nationalise_japanese_assets
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_jewel_of_the_northeast"
+			add_ideas = FNG_Manchurian_Model_Cities
+			716 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			886 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			885 = {
+				increase_state_category_by_one_level = yes
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+##############################
+########- Army Tree -#########
+##############################
+
+	focus = {
+		id = MAN_reorganise_regional_forces
+		icon = GFX_goal_generic_army_junta
+		cost = 8
+
+		x = 33
+		y = 0
+
+		ai_will_do = { factor = 400 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_reorganise_regional_forces"
+			if = {
+				limit = { NOT = { has_template = "Sheng Jingbei Jun" } }
+				division_template = {
+					name = "Sheng Jingbei Jun"
+					division_names_group = CHI_INF_04
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+				}
+			}
+			886 = {
+				create_unit = {
+					division = "name = \"Jilin Sheng Jingbei Jun\" division_template = \"Sheng Jingbei Jun\" start_experience_factor = 0.1"
+					owner = MAN
+				}
+				#Jilin Guard Corps
+			}
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = MAN_expand_the_guard_corps
+		icon = GFX_goal_CSA_empower_red_militias
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_reorganise_regional_forces
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_expand_the_guard_corps"
+			set_technology = { irregular_infantry_tech = 1 }
+			if = {
+				limit = { NOT = { has_template = "Huncheng Lu" } } #Mixed Brigade
+				division_template = {
+					name = "Huncheng Lu"
+					division_names_group = CHI_MIL_01
+					regiments = {
+						irregular_infantry = { x = 0 y = 0 }
+						irregular_infantry = { x = 0 y = 1 }
+						irregular_infantry = { x = 1 y = 0 }
+						irregular_infantry = { x = 1 y = 1 }
+					}
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1000
+				producer = FNG
+			}
+		}
+		search_filters = { FOCUS_FILTER_MANPOWER }
+	}
+
+	focus = {
+		id = MAN_the_iron_stone_detachment
+		icon = GFX_goal_generic_mountain_warfare2
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = -2
+		y = 2
+
+		prerequisite = {
+			focus = MAN_expand_the_guard_corps
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_the_iron_stone_detachment"
+			add_tech_bonus = {
+				name = MAN_the_iron_stone_detachment
+				bonus = 1
+				uses = 1
+				category = mountaineers_tech
+			}
+			add_ideas = generic_militarism_focus
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = MAN_Pacify_The_Countryside
+		icon = GFX_focus_HKG_banditry_suppressed
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = -2
+		y = 3
+
+		prerequisite = {
+			focus = MAN_the_iron_stone_detachment
+		}
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Pacify_The_Countryside"
+			add_stability = 0.2
+			set_temp_variable = { ideology_change_var = 0.1 }
+			change_ruling_party_popularity = yes
+			if = {
+				limit = {
+					NOT = { has_tech = tech_military_police }
+				}
+				set_technology = { tech_military_police = 1 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
+		id = MAN_enlist_mongolian_cavalry
+		icon = GFX_goal_MON_Cool
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = 0
+		y = 2
+
+		prerequisite = {
+			focus = MAN_expand_the_guard_corps
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_enlist_mongolian_cavalry"
+			add_ideas = MON_scourge_of_the_steppes
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = MAN_form_the_public_security_division
+		icon = GFX_goal_secret_police
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_reorganise_regional_forces
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_form_the_public_security_division"
+			create_intelligence_agency = yes
+		}
+	}
+
+	focus = {
+		id = MAN_establish_the_central_training_school
+		icon = GFX_goal_KEN_officer_corps
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = 3
+		y = 1
+
+		prerequisite = {
+			focus = MAN_reorganise_regional_forces
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_establish_the_central_training_school"
+			add_ideas = FNG_Centralized_Command_Reforms
+			army_experience = 30
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+	}
+
+	focus = {
+		id = MAN_hire_foreign_advisors
+		icon = GFX_HUN_foreign_army_advisors
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = 2
+		y = 2
+
+		prerequisite = {
+			focus = MAN_establish_the_central_training_school
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_hire_foreign_advisors"
+			add_doctrine_cost_reduction = {
+				name = MAN_hire_foreign_advisors
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = MAN_fund_the_automobile_corps
+		icon = GFX_goal_USA_integral_mechanization
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = 1
+		y = 3
+
+		prerequisite = {
+			focus = MAN_enlist_mongolian_cavalry
+		}
+		prerequisite = {
+			focus = MAN_hire_foreign_advisors
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_fund_the_automobile_corps"
+			add_tech_bonus = {
+				name = MAN_fund_the_automobile_corps
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = MAN_reconcile_warlord_officers
+		icon = GFX_goal_YUN_Cai_E_Art_War
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = 4
+		y = 2
+
+		prerequisite = {
+			focus = MAN_establish_the_central_training_school
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_reconcile_warlord_officers"
+			army_experience = 30
+			add_tech_bonus = {
+				name = MAN_reconcile_warlord_officers
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+	}
+
+	focus = {
+		id = MAN_rebuild_shenyang_arsenal
+		icon = GFX_goal_shenyang_arsenal
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = 5
+		y = 1
+
+		prerequisite = {
+			focus = MAN_reorganise_regional_forces
+		}
+
+		available = {
+			716 = { is_owned_and_controlled_by = MAN }
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_rebuild_shenyang_arsenal"
+			716 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_aat = no }
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = shenyang_arsenal
+			}
+			else = {
+				mio:FNG_shenyang_arsenal_organisation = { add_mio_size = 2 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_capital_guard_units
+		icon = GFX_goal_FRA_Sentinel_Vigil
+		cost = 8
+
+		relative_position_id = MAN_reorganise_regional_forces
+		x = 5
+		y = 3
+
+		prerequisite = {
+			focus = MAN_rebuild_shenyang_arsenal
+		}
+		prerequisite = {
+			focus = MAN_reconcile_warlord_officers
+		}
+
+		ai_will_do = { factor = 150 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_capital_guard_units"
+			add_tech_bonus = {
+				name = MAN_capital_guard_units
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+			}
+			add_tech_bonus = {
+				name = MAN_capital_guard_units
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = MAN_capital_guard_units
+				bonus = 1
+				uses = 1
+				category = cat_special_forces_generic
+			}
+			886 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4572
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+##############################
+########- Navy Tree -#########
+##############################
+
+	focus = {
+		id = MAN_Authorise_a_River_Defense_Fleet
+		icon = GFX_goal_SKM_Tame_Teesta
+		cost = 7
+
+		x = 33
+		y = 5
+
+		available = {
+			owns_state_with_naval_base = yes
+		}
+
+		ai_will_do = { factor = 300 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Authorise_a_River_Defense_Fleet"
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_Retain_Fengtian_Naval_Staff
+		icon = GFX_goal_FNG_beiyang_navy
+		cost = 7
+
+		relative_position_id = MAN_Authorise_a_River_Defense_Fleet
+		x = -2
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Authorise_a_River_Defense_Fleet
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Retain_Fengtian_Naval_Staff"
+			add_doctrine_cost_reduction = {
+				name = MAN_Retain_Fengtian_Naval_Staff
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_Manchurian_Navy_Land_Units
+		icon = GFX_goal_VIN_vietnamese_marines
+		cost = 7
+
+		relative_position_id = MAN_Retain_Fengtian_Naval_Staff
+		x = 0
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Retain_Fengtian_Naval_Staff
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Manchurian_Navy_Land_Units"
+			add_tech_bonus = {
+				name = MAN_Manchurian_Navy_Land_Units
+				Bonus = 1
+				uses = 2
+				category = Marine_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_Invest_in_Sukoda_Dockyard
+		icon = GFX_goal_NIC_buy_ship
+		cost = 7
+
+		relative_position_id = MAN_Authorise_a_River_Defense_Fleet
+		x = 1
+		y = 1
+
+		available = {
+			885 = { is_owned_and_controlled_by = MAN }
+		}
+
+		prerequisite = {
+			focus = MAN_Authorise_a_River_Defense_Fleet
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Invest_in_Sukoda_Dockyard"
+			navy_experience = 50
+		}
+	}
+
+	focus = {
+		id = MAN_Expand_the_Yingkou_Port
+		icon = GFX_goal_FIU_Rebuild_Adriatic_Shipping_Lanes
+		cost = 7
+
+		relative_position_id = MAN_Invest_in_Sukoda_Dockyard
+		x = -1.25
+		y = 1
+
+		available = {
+			885 = {
+				is_owned_and_controlled_by = MAN
+			}
+		}
+
+		prerequisite = {
+			focus = MAN_Invest_in_Sukoda_Dockyard
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Expand_the_Yingkou_Port"
+			716 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 11764
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_Beyond_Gunboats
+		icon = GFX_goal_CAN_Canadian_Battleships
+		cost = 7
+
+		relative_position_id = MAN_Expand_the_Yingkou_Port
+		x = -1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Expand_the_Yingkou_Port
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Beyond_Gunboats"
+			add_tech_bonus = {
+				name = MAN_Beyond_Gunboats
+				bonus = 0.5
+				uses = 2
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				name = MAN_Beyond_Gunboats
+				bonus = 0.5
+				uses = 2
+				category = cl_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_Underwater_Menace
+		icon = GFX_goal_AUS_unrestricted_submarine_warfare
+		cost = 7
+
+		relative_position_id = MAN_Expand_the_Yingkou_Port
+		X = 1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Expand_the_Yingkou_Port
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Underwater_Menace"
+			add_tech_bonus = {
+				name = MAN_Underwater_Menace
+				bonus = 0.5
+				uses = 2
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_Integrating_Dalian_Naval_Infrastructure
+		icon = GFX_USA_ports_atlantic
+		cost = 7
+
+		relative_position_id = MAN_Invest_in_Sukoda_Dockyard
+		x = 1
+		y = 1
+
+		available = {
+			745 = {
+				is_owned_and_controlled_by = MAN
+			}
+		}
+
+		prerequisite = {
+			focus = MAN_Invest_in_Sukoda_Dockyard
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Integrating_Dalian_Naval_Infrastructure"
+			745 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 1150
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_The_Shipyards_of_Vladivostok
+		icon = GFX_focus_trm_sailors
+		cost = 7
+
+		relative_position_id = MAN_Integrating_Dalian_Naval_Infrastructure
+		x = 2
+		y = 0
+
+		available = {
+			408 = {
+				is_owned_and_controlled_by = MAN
+			}
+		}
+
+		prerequisite = {
+			focus = MAN_Invest_in_Sukoda_Dockyard
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_The_Shipyards_of_Vladivostok"
+			408 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 957
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_Contest_the_Seas
+		icon = GFX_goal_NFA_unchallenged_fleet
+		cost = 7
+
+		relative_position_id = MAN_Integrating_Dalian_Naval_Infrastructure
+		x = 1
+		y = 1
+
+		prerequisite = {
+			focus = MAN_Integrating_Dalian_Naval_Infrastructure
+			focus = MAN_The_Shipyards_of_Vladivostok
+		}
+
+		ai_will_do = { factor = 100 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_Contest_the_Seas"
+			add_tech_bonus = {
+				name = MAN_Contest_the_Seas
+				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+		}
+	}
+
+##############################
+########- Air Tree -##########
+##############################
+
+	focus = {
+		id = MAN_scavenge_fengtian_air_projects
+		icon = GFX_goal_taking_to_sky
+		cost = 8
+
+		x = 41
+		y = 5
+
+		ai_will_do = { factor = 300 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_scavenge_fengtian_air_projects"
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_in_home_area = yes
+					is_valid_state_for_development = yes
+					free_building_slots = { building = air_base size > 2  }
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	#First
+	focus = {
+		id = MAN_manchurian_aviation_company
+		icon = GFX_goal_FNG_chinese_flying_corps
+		cost = 7
+
+		relative_position_id = MAN_scavenge_fengtian_air_projects
+		x = -2
+		y = 1
+
+		ai_will_do = { factor = 100 }
+		prerequisite = { focus = MAN_scavenge_fengtian_air_projects }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_manchurian_aviation_company"
+			add_doctrine_cost_reduction = {
+				name = MAN_manchurian_aviation_company
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_aat = no }
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = manchuria_aviation_company
+			}
+			else = {
+				mio:FNG_manchuria_aviation_company_organisation = { add_mio_size = 2 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_charter_manchurian_flying_school
+		icon = GFX_goal_FNG_beiyang_airforce
+		cost = 7
+
+		relative_position_id = MAN_scavenge_fengtian_air_projects
+		x = -2
+		y = 2
+
+		ai_will_do = { factor = 100 }
+		prerequisite = { focus = MAN_manchurian_aviation_company }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_charter_manchurian_flying_school"
+			air_experience = 30
+		}
+		search_filters = { FOCUS_FILTER_AIR_XP }
+	}
+
+	#Second
+	focus = {
+		id = MAN_manchurian_airplane_manufacturing_company
+		icon = GFX_goal_CZE_air_industry
+		cost = 7
+
+		relative_position_id = MAN_scavenge_fengtian_air_projects
+		x = 0
+		y = 1
+
+		ai_will_do = { factor = 100 }
+		prerequisite = { focus = MAN_scavenge_fengtian_air_projects }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_manchurian_airplane_manufacturing_company"
+			add_one_random_military_factory = yes
+			custom_effect_tooltip = tooltip_white_line
+			if = {
+				limit = { has_dlc_aat = no }
+				custom_effect_tooltip = available_designer
+				show_ideas_tooltip = dongbei_aircraft_manufacturing_company
+			}
+			else = {
+				mio:FNG_dongbei_aircraft_manufacturing_company_organisation = { add_mio_size = 2 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_import_fighter_designs
+		icon = GFX_HUN_fighters
+		cost = 7
+
+		relative_position_id = MAN_scavenge_fengtian_air_projects
+		x = 0
+		y = 2
+
+		ai_will_do = { factor = 100 }
+		prerequisite = { focus = MAN_manchurian_airplane_manufacturing_company }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_import_fighter_designs"
+			add_tech_bonus = {
+				name = MAN_import_fighter_designs
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE_BONUS }
+	}
+
+	focus = {
+		id = MAN_light_bomber_arm
+		icon = GFX_HUN_heavy_bombers
+		cost = 7
+
+		relative_position_id = MAN_scavenge_fengtian_air_projects
+		x = -1
+		y = 3
+
+		ai_will_do = { factor = 100 }
+		prerequisite = { focus = MAN_import_fighter_designs }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_light_bomber_arm"
+			add_tech_bonus = {
+				name = MAN_light_bomber_arm
+				bonus = 1
+				uses = 1
+				category = cas_bomber
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = MAN_naval_aviation_program
+		icon = GFX_goal_FIU_naval_bomber
+		cost = 7
+
+		relative_position_id = MAN_scavenge_fengtian_air_projects
+		x = 1
+		y = 3
+
+		ai_will_do = { factor = 100 }
+		prerequisite = { focus = MAN_import_fighter_designs }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_naval_aviation_program"
+			add_tech_bonus = {
+				name = MAN_naval_aviation_program
+				bonus = 1
+				uses = 1
+				category = naval_air
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	#Third
+	focus = {
+		id = MAN_air_defence_programs
+		icon = GFX_goal_generic_anti_air_gun
+		cost = 7
+
+		relative_position_id = MAN_scavenge_fengtian_air_projects
+		x = 2
+		y = 1
+
+		ai_will_do = { factor = 100 }
+		prerequisite = { focus = MAN_scavenge_fengtian_air_projects }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_air_defence_programs"
+			886 = {
+				add_building_construction = { type = anti_air_building level = 2 }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = MAN_airborne_infantry
+		icon = GFX_goal_generic_paratroopers
+		cost = 7
+
+		relative_position_id = MAN_scavenge_fengtian_air_projects
+		x = 2
+		y = 2
+
+		ai_will_do = { factor = 100 }
+		prerequisite = { focus = MAN_air_defence_programs }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus MAN_airborne_infantry"
+			if = {
+				limit = {
+					NOT = { has_tech = paratroopers }
+				}
+				set_technology = { paratroopers = 1 }
+			}
+			else = {
+				add_tech_bonus = {
+					name = MAN_airborne_infantry
+					bonus = 1
+					uses = 1
+					category = para_tech
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+	
 }

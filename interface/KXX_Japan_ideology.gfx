@@ -14,62 +14,63 @@ spriteTypes = {
 		name = "GFX_idea_JAP_Chrysanthemum_Throne_Hirohito"
 		texturefile = "gfx/interface/ideas/KXX_JAP/JAP_Chrysanthemum_Throne_Hirohito.png"
 	}
-	spriteType = {
+
+	spriteType = { #劳农派共产主义
 		name = "GFX_ideology_tot_rounoucom_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/tot_rounoucom_group.png"
 	}
 
-	spriteType = {
+	spriteType = { #劳农派共产主义
 		name = "GFX_ideology_syn_rounoucom_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/rounoucom_group.png"
 	}
 		
-	spriteType = {
+	spriteType = { #劳农派共产主义
 		name = "GFX_ideology_radsoc_rounoucom_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/rounoucom_group.png"
 	}
 
-	spriteType = {
+	spriteType = { #讲座派共产主义
 		name = "GFX_ideology_kozahacom_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/kozahacom_group.png"
 	}
 
-	spriteType = {
+	spriteType = { #讲座派共产主义
 		name = "GFX_ideology_radsoc_kozahacom_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/radsoc_kozahacom_group.png"
 	}
 
-	spriteType = {
+	spriteType = { #讲座派共产主义
 		name = "GFX_ideology_dainippon_communism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/dainippon_communism_group.png"
 	}
 
-	spriteType = {
+	spriteType = { #昭和国家主义（民粹）
 		name = "GFX_ideology_natpop_showa_statism_subtype"
-		texturefile = "gfx/interface/ideologies/subideologies/npo_showa_statism.png"
+		texturefile = "gfx/interface/ideologies/subideologies/natpop_showa_statism.png"
 	}
 
-	spriteType = {
+	spriteType = { #昭和国家主义（家独）
 		name = "GFX_ideology_pataut_showa_statism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/patuat_showa_statism.png"
 	}
 
-	spriteType = {
+	spriteType = { #昭和国家主义（威民）
 		name = "GFX_ideology_authdem_showa_statism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/authdem_showa_statism.png"
 	}
 
-	spriteType = {
+	spriteType = { #日本军国主义（威民）
 		name = "GFX_ideology_authdem_japanese_militarism_subtype"
-		texturefile = "gfx/interface/ideologies/subideologies/npo_japanese_militarism.png"
+		texturefile = "gfx/interface/ideologies/subideologies/authdem_japanese_militarism.png"
 	}
 
-	spriteType = {
+	spriteType = { #日本军国主义（民粹）
 		name = "GFX_ideology_natpop_japanese_militarism_subtype"
-		texturefile = "gfx/interface/ideologies/subideologies/npo_japanese_militarism.png"
+		texturefile = "gfx/interface/ideologies/subideologies/natpop_japanese_militarism.png"
 	}
 
-	spriteType = {
+	spriteType = { #日本军国主义（家独）
 		name = "GFX_ideology_pataut_japanese_militarism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/pataut_japanese_militarism.png"
 	}
@@ -107,11 +108,6 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_ideology_natpop_nichiren_buddhism_subtype"
 		texturefile = "gfx/interface/ideologies/subideologies/natpop_nichirenism.png"
-	}
-
-	SpriteType = {
-		name = "GFX_ideology_radsoc_sanshiro_thought_subtype"
-		texturefile = "gfx/interface/ideologies/subideologies/radsoc_showa_ananarchism.png"
 	}
 
 }

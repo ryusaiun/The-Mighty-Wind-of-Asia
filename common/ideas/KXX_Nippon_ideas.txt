@@ -13,4 +13,44 @@ ideas = {
 			}
 		}
 	}
+
+	country = {
+		JAP_CTH_Junnosuke_Inoue = {#井上准之助
+			on_add = {log = "[GetDateText]: [Root.GetName]: JAP_CTH_Junnosuke_Inoue"}
+			allowed = { always = yes }
+			picture = JAP_Chrysanthemum_Throne_Hirohito
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+	}
+
+	country = {
+		JAP_CTH_Adachi_Kenzo = {#安达谦藏
+			on_add = {log = "[GetDateText]: [Root.GetName]: JAP_CTH_Adachi_Kenzo"}
+			allowed = { always = yes }
+			picture = JAP_Chrysanthemum_Throne_Hirohito
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+	}
+
+	country = {
+		JAP_CTH_Yamamoto_Senji = {#山本宣治
+			on_add = {log = "[GetDateText]: [Root.GetName]: JAP_CTH_Yamamoto_Senji"}
+			allowed = { always = yes }
+			picture = JAP_Chrysanthemum_Throne_Hirohito
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+	}
+
 }
